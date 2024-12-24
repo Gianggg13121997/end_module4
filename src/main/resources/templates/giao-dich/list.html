@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách Giao Dịch</title>
+</head>
+<body>
+
+<h1>Danh sách Giao Dịch</h1>
+<a href="/giao-dich/danh-sach">Danh sách Giao Dịch</a>
+<a href="/giao-dich/them-moi">Add</a>
+
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Mã Giao Dịch</th>
+        <th>Tên Khách Hàng</th>
+        <th>Số Điện Thoại</th>
+        <th>Email</th>
+        <th>Loại Dịch Vụ</th>
+        <th>Đơn Giá</th>
+        <th>Diện Tích</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="giaoDich : ${giaoDichList}">
+        <td th:text="${giaoDich.maGiaoDich}"></td>
+        <td th:text="${giaoDich.khachHang.tenKhachHang}"></td>
+        <td th:text="${giaoDich.khachHang.soDienThoai}"></td>
+        <td th:text="${giaoDich.khachHang.email}"></td>
+        <td th:text="${giaoDich.loaiDichVu}"></td>
+        <td th:text="${giaoDich.donGia}"></td>
+        <td th:text="${giaoDich.dienTich}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Thêm mới giao dịch</title>
+</head>
+<body>
+<h1>Thêm mới giao dịch</h1>
+<form th:action="@{/giao-dich/them-moi}" method="post" th:object="${giaoDich}">
+
+  <!-- Mã giao dịch -->
+  <label for="maGiaoDich">Mã giao dịch:</label>
+  <input type="text" id="maGiaoDich" th:field="*{maGiaoDich}" required />
+  <br />
+
+  <!-- Mã khách hàng -->
+  <label for="maKhachHang">Mã khách hàng:</label>
+  <input type="text" id="maKhachHang" th:field="*{khachHang.maKhachHang}" required />
+  <br />
+
+  <!-- Tên khách hàng -->
+  <label for="tenKhachHang">Tên khách hàng:</label>
+  <input type="text" id="tenKhachHang" th:field="*{khachHang.tenKhachHang}" required />
+  <br />
+
+  <!-- Địa chỉ khách hàng -->
+  <label for="diaChi">Địa chỉ:</label>
+  <input type="text" id="diaChi" th:field="*{khachHang.diaChi}" required />
+  <br />
+
+  <!-- Số điện thoại -->
+  <label for="soDienThoai">Số điện thoại:</label>
+  <input type="text" id="soDienThoai" th:field="*{khachHang.soDienThoai}" required />
+  <br />
+
+  <!-- Loại dịch vụ -->
+  <label for="loaiDichVu">Loại dịch vụ:</label>
+  <select id="loaiDichVu" th:field="*{loaiDichVu}">
+    <option value="Đất">Đất</option>
+    <option value="Nhà và đất">Nhà và đất</option>
+  </select>
+  <br />
+
+  <!-- Ngày giao dịch -->
+  <label for="ngayGiaoDich">Ngày giao dịch:</label>
+  <input type="text" id="ngayGiaoDich" th:field="*{ngayGiaoDich}" placeholder="dd/MM/yyyy" required />
+  <br />
+
+  <!-- Đơn giá -->
+  <label for="donGia">Đơn giá:</label>
+  <input type="number" id="donGia" th:field="*{donGia}" required />
+  <br />
+
+  <!-- Diện tích -->
+  <label for="dienTich">Diện tích:</label>
+  <input type="number" id="dienTich" th:field="*{dienTich}" required />
+  <br />
+
+  <button type="submit">Thêm mới</button>
+</form>
+</body>
+</html>
